@@ -25,6 +25,7 @@ h1 {
 
 h2 {
   font-size: 5.5rem;
+  line-height: 6rem;
 }
 
 h3 {
@@ -143,6 +144,120 @@ button {
   font-family: "Roboto", sans-serif;
 }
 
+.index-section-1 {
+  box-sizing: border-box;
+  width: 100%;
+  max-height: 844px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  padding-bottom: 0px !important;
+  background: linear-gradient(
+    98.67deg,
+    #f2fbfe 1.51%,
+    #ffffff 54.38%,
+    #edf7e4 110.67%
+  );
+}
+
+.index-section-1-left {
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  gap: 40px;
+  padding-bottom: 40px;
+}
+.index-section-1-left > .section-1-title {
+  background-color: red;
+}
+.index-section-1-left > .p-1 {
+  color: var(--text-muted);
+  font-size: 1.125rem;
+}
+
+.index-section-1 .btn-container {
+  display: flex;
+  gap: 20px;
+}
+
+.index-section-1-left .btn-appstore {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 13.43rem;
+  height: 4.25rem;
+  color: white;
+  background-color: var(--color-secondary);
+  font-size: 1.75;
+  font-weight: 653;
+}
+
+.index-section-1-left .btn-playstore {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  width: 13.43rem;
+  height: 4.25rem;
+  color: var(--color-secondary);
+  border-color: var(--color-secondary);
+  background-color: white;
+  font-size: 1.75;
+  font-weight: 653;
+}
+
+.index-section-1-left .user-count-container {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+}
+
+.index-section-1-left .user-count-container div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.index-section-1-left .user-count-container p {
+  color: var(--text-muted);
+  font-family: "Roboto", sans-serif;
+  max-width: 5.5rem;
+  font-size: 1rem;
+}
+
+.index-section-1-right {
+  display: flex;
+  justify-content: center;
+}
+
+.index-section-1-right > img {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.index-section-1-title {
+  font-size: 1.5rem;
+  color: #1f7a8c;
+  font-weight: 788;
+}
+
+@media only screen and (max-width: 1200px) {
+  .index-section-1 {
+    grid-template-columns: auto;
+  }
+  .index-section-1-left {
+    order: 2;
+    padding-top: 40px;
+  }
+  .index-section-1-right {
+    padding: 0px;
+    order: 1;
+  }
+}
+
+/* media queries */
 /* media queries */
 
 @media only screen and (max-width: 600px) {
@@ -157,6 +272,10 @@ button {
     padding-right: 20px;
     padding-left: 20px;
   }
+  .pading-2 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
   .main-navbar > .burger-menu {
     display: flex;
   }
@@ -164,6 +283,7 @@ button {
     display: flex;
   }
 }
+
 @media only screen and (min-width: 600px) {
   html {
     font-size: 10px;
@@ -176,6 +296,10 @@ button {
     padding-right: 20px;
     padding-left: 20px;
   }
+  .pading-2 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
   .main-navbar > .burger-menu {
     display: flex;
   }
@@ -183,48 +307,6 @@ button {
     display: flex;
   }
 }
-
-.index-section-1 {
-  box-sizing: border-box;
-  width: 100%;
-  display: grid;
-  grid-template-columns: 50% 50%;
-  background: linear-gradient(
-    98.67deg,
-    #f2fbfe 1.51%,
-    #ffffff 54.38%,
-    #edf7e4 110.67%
-  );
-}
-
-.index-section-1-left {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: start;
-}
-.index-section-1-left > .section-1-title {
-  background-color: red;
-}
-
-@media only screen and (max-width: 1200px) {
-  .index-section-1 {
-    grid-template-columns: auto;
-  }
-}
-
-.index-section-1-right {
-  display: flex;
-  justify-content: end;
-  align-items: end;
-  padding: 50px 50px 0px 50px;
-}
-
-.index-section-1-right > img {
-  width: 100%;
-}
-
-/* media queries */
 
 @media only screen and (min-width: 768px) {
   html {
@@ -235,9 +317,14 @@ button {
     display: none;
   }
   .pading-1 {
-    padding-right: 10px;
-    padding-left: 10px;
+    padding-right: 30px;
+    padding-left: 30px;
   }
+  .pading-2 {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
   .main-navbar > .burger-menu {
     display: flex;
   }
@@ -252,8 +339,13 @@ button {
     display: flex;
   }
   .pading-1 {
-    padding-right: 20px;
-    padding-left: 20px;
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+
+  .pading-2 {
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
   .main-navbar > .burger-menu {
     display: none;
@@ -274,6 +366,10 @@ button {
     padding-right: 60px;
     padding-left: 60px;
   }
+  .pading-2 {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
 }
 @media only screen and (min-width: 1440px) {
   html {
@@ -285,6 +381,10 @@ button {
   .pading-1 {
     padding-right: 80px;
     padding-left: 80px;
+  }
+  .pading-2 {
+    padding-top: 80px;
+    padding-bottom: 80px;
   }
 }
 
@@ -298,5 +398,9 @@ button {
   .pading-1 {
     padding-right: 100px;
     padding-left: 100px;
+  }
+  .pading-2 {
+    padding-top: 100px;
+    padding-bottom: 100px;
   }
 }
