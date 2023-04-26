@@ -1,13 +1,35 @@
 "use strict";
-const burgermenu = document.querySelector("#burger-menu");
-const dropNavbar = document.querySelector("#drop-navbar");
-// burger menu logic here
-burgermenu === null || burgermenu === void 0 ? void 0 : burgermenu.addEventListener("click", () => {
-    if (!(dropNavbar === null || dropNavbar === void 0 ? void 0 : dropNavbar.classList.contains("drop-navbar-togel"))) {
-        dropNavbar === null || dropNavbar === void 0 ? void 0 : dropNavbar.classList.add("drop-navbar-togel");
+//main-navbar logic here
+const mainNavbar = document.querySelector("#main-navbar");
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 80) {
+        mainNavbar === null || mainNavbar === void 0 ? void 0 : mainNavbar.classList.add("bg-white");
     }
     else {
-        dropNavbar === null || dropNavbar === void 0 ? void 0 : dropNavbar.classList.remove("drop-navbar-togel");
+        mainNavbar === null || mainNavbar === void 0 ? void 0 : mainNavbar.classList.remove("bg-white");
+    }
+});
+// SideNavbar  logic here
+const burgermenu = document.querySelector("#burger-menu");
+const sideNavbarContent = document.querySelector("#side-navbar-content");
+const sideNavbarBackdrop = document.querySelector("#side-navbar-backdrop");
+sideNavbarContent === null || sideNavbarContent === void 0 ? void 0 : sideNavbarContent.addEventListener("click", (e) => {
+    e.stopPropagation();
+});
+burgermenu === null || burgermenu === void 0 ? void 0 : burgermenu.addEventListener("click", () => {
+    if (!(sideNavbarBackdrop === null || sideNavbarBackdrop === void 0 ? void 0 : sideNavbarBackdrop.classList.contains("collapse"))) {
+        sideNavbarBackdrop === null || sideNavbarBackdrop === void 0 ? void 0 : sideNavbarBackdrop.classList.add("collapse");
+    }
+    else {
+        sideNavbarBackdrop === null || sideNavbarBackdrop === void 0 ? void 0 : sideNavbarBackdrop.classList.remove("collapse");
+    }
+});
+sideNavbarBackdrop === null || sideNavbarBackdrop === void 0 ? void 0 : sideNavbarBackdrop.addEventListener("click", () => {
+    if (!(sideNavbarBackdrop === null || sideNavbarBackdrop === void 0 ? void 0 : sideNavbarBackdrop.classList.contains("collapse"))) {
+        sideNavbarBackdrop === null || sideNavbarBackdrop === void 0 ? void 0 : sideNavbarBackdrop.classList.add("collapse");
+    }
+    else {
+        sideNavbarBackdrop === null || sideNavbarBackdrop === void 0 ? void 0 : sideNavbarBackdrop.classList.remove("collapse");
     }
 });
 //homepage section-3 crousel logic here
@@ -59,6 +81,47 @@ crousel1Btn === null || crousel1Btn === void 0 ? void 0 : crousel1Btn.addEventLi
         crousel1DotThree === null || crousel1DotThree === void 0 ? void 0 : crousel1DotThree.classList.remove("dot-active");
     }
 });
+setInterval(() => {
+    if ((crousel1ImgOne === null || crousel1ImgOne === void 0 ? void 0 : crousel1ImgOne.classList.contains("left")) &&
+        (crousel1ImgTwo === null || crousel1ImgTwo === void 0 ? void 0 : crousel1ImgTwo.classList.contains("mid")) &&
+        (crousel1ImgThree === null || crousel1ImgThree === void 0 ? void 0 : crousel1ImgThree.classList.contains("rightc"))) {
+        crousel1ImgOne.classList.remove("left");
+        crousel1ImgOne.classList.add("left-mid");
+        crousel1ImgTwo.classList.remove("mid");
+        crousel1ImgTwo.classList.add("mid-right");
+        crousel1ImgThree.classList.remove("rightc");
+        crousel1ImgThree.classList.add("right-left");
+        crousel1DotOne === null || crousel1DotOne === void 0 ? void 0 : crousel1DotOne.classList.remove("dot-active");
+        crousel1DotTwo === null || crousel1DotTwo === void 0 ? void 0 : crousel1DotTwo.classList.add("dot-active");
+        crousel1DotThree === null || crousel1DotThree === void 0 ? void 0 : crousel1DotThree.classList.remove("dot-active");
+    }
+    else if ((crousel1ImgOne === null || crousel1ImgOne === void 0 ? void 0 : crousel1ImgOne.classList.contains("left-mid")) &&
+        (crousel1ImgTwo === null || crousel1ImgTwo === void 0 ? void 0 : crousel1ImgTwo.classList.contains("mid-right")) &&
+        (crousel1ImgThree === null || crousel1ImgThree === void 0 ? void 0 : crousel1ImgThree.classList.contains("right-left"))) {
+        crousel1ImgOne.classList.remove("left-mid");
+        crousel1ImgOne.classList.add("left-right");
+        crousel1ImgTwo.classList.remove("mid-right");
+        crousel1ImgTwo.classList.add("mid-left");
+        crousel1ImgThree.classList.remove("right-left");
+        crousel1ImgThree.classList.add("right-mid");
+        crousel1DotOne === null || crousel1DotOne === void 0 ? void 0 : crousel1DotOne.classList.remove("dot-active");
+        crousel1DotTwo === null || crousel1DotTwo === void 0 ? void 0 : crousel1DotTwo.classList.remove("dot-active");
+        crousel1DotThree === null || crousel1DotThree === void 0 ? void 0 : crousel1DotThree.classList.add("dot-active");
+    }
+    else if ((crousel1ImgOne === null || crousel1ImgOne === void 0 ? void 0 : crousel1ImgOne.classList.contains("left-right")) &&
+        (crousel1ImgTwo === null || crousel1ImgTwo === void 0 ? void 0 : crousel1ImgTwo.classList.contains("mid-left")) &&
+        (crousel1ImgThree === null || crousel1ImgThree === void 0 ? void 0 : crousel1ImgThree.classList.contains("right-mid"))) {
+        crousel1ImgOne.classList.remove("left-right");
+        crousel1ImgOne.classList.add("left");
+        crousel1ImgTwo.classList.remove("mid-left");
+        crousel1ImgTwo.classList.add("mid");
+        crousel1ImgThree.classList.remove("right-mid");
+        crousel1ImgThree.classList.add("rightc");
+        crousel1DotOne === null || crousel1DotOne === void 0 ? void 0 : crousel1DotOne.classList.add("dot-active");
+        crousel1DotTwo === null || crousel1DotTwo === void 0 ? void 0 : crousel1DotTwo.classList.remove("dot-active");
+        crousel1DotThree === null || crousel1DotThree === void 0 ? void 0 : crousel1DotThree.classList.remove("dot-active");
+    }
+}, 3000);
 // section-7 crousel logic here
 const slide1 = document.querySelector("#crousel2-slid1");
 const slide2 = document.querySelector("#crousel2-slid2");

@@ -1,12 +1,41 @@
-const burgermenu = document.querySelector<HTMLDivElement>("#burger-menu");
-const dropNavbar = document.querySelector<HTMLDivElement>("#drop-navbar");
+//main-navbar logic here
 
-// burger menu logic here
-burgermenu?.addEventListener("click", () => {
-  if (!dropNavbar?.classList.contains("drop-navbar-togel")) {
-    dropNavbar?.classList.add("drop-navbar-togel");
+const mainNavbar = document.querySelector<HTMLDivElement>("#main-navbar");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 80) {
+    mainNavbar?.classList.add("bg-white");
   } else {
-    dropNavbar?.classList.remove("drop-navbar-togel");
+    mainNavbar?.classList.remove("bg-white");
+  }
+});
+
+// SideNavbar  logic here
+
+const burgermenu = document.querySelector<HTMLDivElement>("#burger-menu");
+const sideNavbarContent = document.querySelector<HTMLDivElement>(
+  "#side-navbar-content"
+);
+const sideNavbarBackdrop = document.querySelector<HTMLDivElement>(
+  "#side-navbar-backdrop"
+);
+
+sideNavbarContent?.addEventListener("click", (e) => {
+  e.stopPropagation();
+});
+burgermenu?.addEventListener("click", () => {
+  if (!sideNavbarBackdrop?.classList.contains("collapse")) {
+    sideNavbarBackdrop?.classList.add("collapse");
+  } else {
+    sideNavbarBackdrop?.classList.remove("collapse");
+  }
+});
+
+sideNavbarBackdrop?.addEventListener("click", () => {
+  if (!sideNavbarBackdrop?.classList.contains("collapse")) {
+    sideNavbarBackdrop?.classList.add("collapse");
+  } else {
+    sideNavbarBackdrop?.classList.remove("collapse");
   }
 });
 
@@ -18,6 +47,7 @@ const crousel1ImgTwo =
   document.querySelector<HTMLImageElement>("#crousel-1-img-2");
 const crousel1ImgThree =
   document.querySelector<HTMLImageElement>("#crousel-1-img-3");
+
 const crousel1Btn = document.querySelector<HTMLButtonElement>("#crousel-1-btn");
 const crousel1DotOne = document.querySelector("#crousel-1-dot-1");
 const crousel1DotTwo = document.querySelector("#crousel-1-dot-2");
@@ -68,6 +98,52 @@ crousel1Btn?.addEventListener("click", () => {
     crousel1DotThree?.classList.remove("dot-active");
   }
 });
+
+setInterval(() => {
+  if (
+    crousel1ImgOne?.classList.contains("left") &&
+    crousel1ImgTwo?.classList.contains("mid") &&
+    crousel1ImgThree?.classList.contains("rightc")
+  ) {
+    crousel1ImgOne.classList.remove("left");
+    crousel1ImgOne.classList.add("left-mid");
+    crousel1ImgTwo.classList.remove("mid");
+    crousel1ImgTwo.classList.add("mid-right");
+    crousel1ImgThree.classList.remove("rightc");
+    crousel1ImgThree.classList.add("right-left");
+    crousel1DotOne?.classList.remove("dot-active");
+    crousel1DotTwo?.classList.add("dot-active");
+    crousel1DotThree?.classList.remove("dot-active");
+  } else if (
+    crousel1ImgOne?.classList.contains("left-mid") &&
+    crousel1ImgTwo?.classList.contains("mid-right") &&
+    crousel1ImgThree?.classList.contains("right-left")
+  ) {
+    crousel1ImgOne.classList.remove("left-mid");
+    crousel1ImgOne.classList.add("left-right");
+    crousel1ImgTwo.classList.remove("mid-right");
+    crousel1ImgTwo.classList.add("mid-left");
+    crousel1ImgThree.classList.remove("right-left");
+    crousel1ImgThree.classList.add("right-mid");
+    crousel1DotOne?.classList.remove("dot-active");
+    crousel1DotTwo?.classList.remove("dot-active");
+    crousel1DotThree?.classList.add("dot-active");
+  } else if (
+    crousel1ImgOne?.classList.contains("left-right") &&
+    crousel1ImgTwo?.classList.contains("mid-left") &&
+    crousel1ImgThree?.classList.contains("right-mid")
+  ) {
+    crousel1ImgOne.classList.remove("left-right");
+    crousel1ImgOne.classList.add("left");
+    crousel1ImgTwo.classList.remove("mid-left");
+    crousel1ImgTwo.classList.add("mid");
+    crousel1ImgThree.classList.remove("right-mid");
+    crousel1ImgThree.classList.add("rightc");
+    crousel1DotOne?.classList.add("dot-active");
+    crousel1DotTwo?.classList.remove("dot-active");
+    crousel1DotThree?.classList.remove("dot-active");
+  }
+}, 3000);
 
 // section-7 crousel logic here
 
