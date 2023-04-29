@@ -99,51 +99,51 @@ crousel1Btn?.addEventListener("click", () => {
   }
 });
 
-// setInterval(() => {
-//   if (
-//     crousel1ImgOne?.classList.contains("left") &&
-//     crousel1ImgTwo?.classList.contains("mid") &&
-//     crousel1ImgThree?.classList.contains("rightc")
-//   ) {
-//     crousel1ImgOne.classList.remove("left");
-//     crousel1ImgOne.classList.add("left-mid");
-//     crousel1ImgTwo.classList.remove("mid");
-//     crousel1ImgTwo.classList.add("mid-right");
-//     crousel1ImgThree.classList.remove("rightc");
-//     crousel1ImgThree.classList.add("right-left");
-//     crousel1DotOne?.classList.remove("dot-active");
-//     crousel1DotTwo?.classList.add("dot-active");
-//     crousel1DotThree?.classList.remove("dot-active");
-//   } else if (
-//     crousel1ImgOne?.classList.contains("left-mid") &&
-//     crousel1ImgTwo?.classList.contains("mid-right") &&
-//     crousel1ImgThree?.classList.contains("right-left")
-//   ) {
-//     crousel1ImgOne.classList.remove("left-mid");
-//     crousel1ImgOne.classList.add("left-right");
-//     crousel1ImgTwo.classList.remove("mid-right");
-//     crousel1ImgTwo.classList.add("mid-left");
-//     crousel1ImgThree.classList.remove("right-left");
-//     crousel1ImgThree.classList.add("right-mid");
-//     crousel1DotOne?.classList.remove("dot-active");
-//     crousel1DotTwo?.classList.remove("dot-active");
-//     crousel1DotThree?.classList.add("dot-active");
-//   } else if (
-//     crousel1ImgOne?.classList.contains("left-right") &&
-//     crousel1ImgTwo?.classList.contains("mid-left") &&
-//     crousel1ImgThree?.classList.contains("right-mid")
-//   ) {
-//     crousel1ImgOne.classList.remove("left-right");
-//     crousel1ImgOne.classList.add("left");
-//     crousel1ImgTwo.classList.remove("mid-left");
-//     crousel1ImgTwo.classList.add("mid");
-//     crousel1ImgThree.classList.remove("right-mid");
-//     crousel1ImgThree.classList.add("rightc");
-//     crousel1DotOne?.classList.add("dot-active");
-//     crousel1DotTwo?.classList.remove("dot-active");
-//     crousel1DotThree?.classList.remove("dot-active");
-//   }
-// }, 3000);
+setInterval(() => {
+  if (
+    crousel1ImgOne?.classList.contains("left") &&
+    crousel1ImgTwo?.classList.contains("mid") &&
+    crousel1ImgThree?.classList.contains("rightc")
+  ) {
+    crousel1ImgOne.classList.remove("left");
+    crousel1ImgOne.classList.add("left-mid");
+    crousel1ImgTwo.classList.remove("mid");
+    crousel1ImgTwo.classList.add("mid-right");
+    crousel1ImgThree.classList.remove("rightc");
+    crousel1ImgThree.classList.add("right-left");
+    crousel1DotOne?.classList.remove("dot-active");
+    crousel1DotTwo?.classList.add("dot-active");
+    crousel1DotThree?.classList.remove("dot-active");
+  } else if (
+    crousel1ImgOne?.classList.contains("left-mid") &&
+    crousel1ImgTwo?.classList.contains("mid-right") &&
+    crousel1ImgThree?.classList.contains("right-left")
+  ) {
+    crousel1ImgOne.classList.remove("left-mid");
+    crousel1ImgOne.classList.add("left-right");
+    crousel1ImgTwo.classList.remove("mid-right");
+    crousel1ImgTwo.classList.add("mid-left");
+    crousel1ImgThree.classList.remove("right-left");
+    crousel1ImgThree.classList.add("right-mid");
+    crousel1DotOne?.classList.remove("dot-active");
+    crousel1DotTwo?.classList.remove("dot-active");
+    crousel1DotThree?.classList.add("dot-active");
+  } else if (
+    crousel1ImgOne?.classList.contains("left-right") &&
+    crousel1ImgTwo?.classList.contains("mid-left") &&
+    crousel1ImgThree?.classList.contains("right-mid")
+  ) {
+    crousel1ImgOne.classList.remove("left-right");
+    crousel1ImgOne.classList.add("left");
+    crousel1ImgTwo.classList.remove("mid-left");
+    crousel1ImgTwo.classList.add("mid");
+    crousel1ImgThree.classList.remove("right-mid");
+    crousel1ImgThree.classList.add("rightc");
+    crousel1DotOne?.classList.add("dot-active");
+    crousel1DotTwo?.classList.remove("dot-active");
+    crousel1DotThree?.classList.remove("dot-active");
+  }
+}, 3000);
 
 // section-7 crousel logic here
 
