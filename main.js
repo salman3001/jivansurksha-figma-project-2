@@ -12,6 +12,7 @@ window.addEventListener("scroll", () => {
 // SideNavbar  logic here
 const burgermenu = document.querySelector("#burger-menu");
 const sideNavbarContent = document.querySelector("#side-navbar-content");
+const closeBtn = document.querySelectorAll(".close-btn-togel");
 const sideNavbarBackdrop = document.querySelector("#side-navbar-backdrop");
 sideNavbarContent === null || sideNavbarContent === void 0 ? void 0 : sideNavbarContent.addEventListener("click", (e) => {
     e.stopPropagation();
@@ -23,6 +24,16 @@ burgermenu === null || burgermenu === void 0 ? void 0 : burgermenu.addEventListe
     else {
         sideNavbarBackdrop === null || sideNavbarBackdrop === void 0 ? void 0 : sideNavbarBackdrop.classList.remove("collapse");
     }
+});
+closeBtn.forEach((btn) => {
+    btn === null || btn === void 0 ? void 0 : btn.addEventListener("click", () => {
+        if (!(sideNavbarBackdrop === null || sideNavbarBackdrop === void 0 ? void 0 : sideNavbarBackdrop.classList.contains("collapse"))) {
+            sideNavbarBackdrop === null || sideNavbarBackdrop === void 0 ? void 0 : sideNavbarBackdrop.classList.add("collapse");
+        }
+        else {
+            sideNavbarBackdrop === null || sideNavbarBackdrop === void 0 ? void 0 : sideNavbarBackdrop.classList.remove("collapse");
+        }
+    });
 });
 sideNavbarBackdrop === null || sideNavbarBackdrop === void 0 ? void 0 : sideNavbarBackdrop.addEventListener("click", () => {
     if (!(sideNavbarBackdrop === null || sideNavbarBackdrop === void 0 ? void 0 : sideNavbarBackdrop.classList.contains("collapse"))) {
@@ -122,6 +133,73 @@ setInterval(() => {
         crousel1DotThree === null || crousel1DotThree === void 0 ? void 0 : crousel1DotThree.classList.remove("dot-active");
     }
 }, 3000);
+//section-6 slider logic
+const section6LeftBtn = document.querySelector("#section-6-btn-left");
+const section6RightBtn = document.querySelector("#section-6-btn-right");
+const section6ImgOne = document.querySelector(".section-6-img-1");
+const section6ImgTwo = document.querySelector(".section-6-img-2");
+const section6ImgThree = document.querySelector(".section-6-img-3");
+let secction6ActiveSlide = 1;
+section6RightBtn === null || section6RightBtn === void 0 ? void 0 : section6RightBtn.addEventListener("click", () => {
+    if (secction6ActiveSlide === 1) {
+        section6ImgOne.style.display = "none";
+        section6ImgTwo.style.display = "block";
+        secction6ActiveSlide = 2;
+        return;
+    }
+    if (secction6ActiveSlide === 2) {
+        section6ImgTwo.style.display = "none";
+        section6ImgThree.style.display = "block";
+        secction6ActiveSlide = 3;
+        return;
+    }
+    if (secction6ActiveSlide === 3) {
+        section6ImgThree.style.display = "none";
+        section6ImgOne.style.display = "block";
+        secction6ActiveSlide = 1;
+        return;
+    }
+});
+section6LeftBtn === null || section6LeftBtn === void 0 ? void 0 : section6LeftBtn.addEventListener("click", () => {
+    if (secction6ActiveSlide === 1) {
+        section6ImgOne.style.display = "none";
+        section6ImgThree.style.display = "block";
+        secction6ActiveSlide = 3;
+        return;
+    }
+    if (secction6ActiveSlide === 2) {
+        section6ImgTwo.style.display = "none";
+        section6ImgOne.style.display = "block";
+        secction6ActiveSlide = 1;
+        return;
+    }
+    if (secction6ActiveSlide === 3) {
+        section6ImgThree.style.display = "none";
+        section6ImgTwo.style.display = "block";
+        secction6ActiveSlide = 2;
+        return;
+    }
+});
+setInterval(() => {
+    if (secction6ActiveSlide === 1) {
+        section6ImgOne.style.display = "none";
+        section6ImgTwo.style.display = "block";
+        secction6ActiveSlide = 2;
+        return;
+    }
+    if (secction6ActiveSlide === 2) {
+        section6ImgTwo.style.display = "none";
+        section6ImgThree.style.display = "block";
+        secction6ActiveSlide = 3;
+        return;
+    }
+    if (secction6ActiveSlide === 3) {
+        section6ImgThree.style.display = "none";
+        section6ImgOne.style.display = "block";
+        secction6ActiveSlide = 1;
+        return;
+    }
+}, 3000);
 // section-7 crousel logic here
 const slide1 = document.querySelector("#crousel2-slid1");
 const slide2 = document.querySelector("#crousel2-slid2");
@@ -129,6 +207,12 @@ const slide3 = document.querySelector("#crousel2-slid3");
 const slide4 = document.querySelector("#crousel2-slid4");
 const slide5 = document.querySelector("#crousel2-slid5");
 const slide6 = document.querySelector("#crousel2-slid6");
+const card1 = document.querySelector("#card-1");
+const card2 = document.querySelector("#card-2");
+const card3 = document.querySelector("#card-3");
+const card4 = document.querySelector("#card-4");
+const card5 = document.querySelector("#card-5");
+const card6 = document.querySelector("#card-6");
 const slider2LeftBtn = document.querySelector("#crousel2-btn-left");
 const slider2RightBtn = document.querySelector("#crousel2-btn-right");
 const slider2dotOne = document.querySelector("#slider2-dot1");
@@ -145,6 +229,11 @@ slider2LeftBtn === null || slider2LeftBtn === void 0 ? void 0 : slider2LeftBtn.a
         slide3 === null || slide3 === void 0 ? void 0 : slide3.classList.add("translate-x");
         slide4 === null || slide4 === void 0 ? void 0 : slide4.classList.add("translate-x");
         slide5 === null || slide5 === void 0 ? void 0 : slide5.classList.add("translate-x");
+        card1 === null || card1 === void 0 ? void 0 : card1.classList.add("translate-x");
+        card2 === null || card2 === void 0 ? void 0 : card2.classList.add("translate-x");
+        card3 === null || card3 === void 0 ? void 0 : card3.classList.add("translate-x");
+        card4 === null || card4 === void 0 ? void 0 : card4.classList.add("translate-x");
+        card5 === null || card5 === void 0 ? void 0 : card5.classList.add("translate-x");
         activeSlide = 6;
         slider2dotOne === null || slider2dotOne === void 0 ? void 0 : slider2dotOne.classList.remove("dot-active");
         slider2dotSix === null || slider2dotSix === void 0 ? void 0 : slider2dotSix.classList.add("dot-active");
@@ -152,6 +241,7 @@ slider2LeftBtn === null || slider2LeftBtn === void 0 ? void 0 : slider2LeftBtn.a
     }
     if (activeSlide === 2) {
         slide1 === null || slide1 === void 0 ? void 0 : slide1.classList.remove("translate-x");
+        card1 === null || card1 === void 0 ? void 0 : card1.classList.remove("translate-x");
         activeSlide = 1;
         slider2dotTwo === null || slider2dotTwo === void 0 ? void 0 : slider2dotTwo.classList.remove("dot-active");
         slider2dotOne === null || slider2dotOne === void 0 ? void 0 : slider2dotOne.classList.add("dot-active");
@@ -159,6 +249,7 @@ slider2LeftBtn === null || slider2LeftBtn === void 0 ? void 0 : slider2LeftBtn.a
     }
     if (activeSlide === 3) {
         slide2 === null || slide2 === void 0 ? void 0 : slide2.classList.remove("translate-x");
+        card2 === null || card2 === void 0 ? void 0 : card2.classList.remove("translate-x");
         activeSlide = 2;
         slider2dotThree === null || slider2dotThree === void 0 ? void 0 : slider2dotThree.classList.remove("dot-active");
         slider2dotTwo === null || slider2dotTwo === void 0 ? void 0 : slider2dotTwo.classList.add("dot-active");
@@ -166,6 +257,7 @@ slider2LeftBtn === null || slider2LeftBtn === void 0 ? void 0 : slider2LeftBtn.a
     }
     if (activeSlide === 4) {
         slide3 === null || slide3 === void 0 ? void 0 : slide3.classList.remove("translate-x");
+        card3 === null || card3 === void 0 ? void 0 : card3.classList.remove("translate-x");
         activeSlide = 3;
         slider2dotFour === null || slider2dotFour === void 0 ? void 0 : slider2dotFour.classList.remove("dot-active");
         slider2dotThree === null || slider2dotThree === void 0 ? void 0 : slider2dotThree.classList.add("dot-active");
@@ -173,6 +265,7 @@ slider2LeftBtn === null || slider2LeftBtn === void 0 ? void 0 : slider2LeftBtn.a
     }
     if (activeSlide === 5) {
         slide4 === null || slide4 === void 0 ? void 0 : slide4.classList.remove("translate-x");
+        card4 === null || card4 === void 0 ? void 0 : card4.classList.remove("translate-x");
         activeSlide = 4;
         slider2dotFive === null || slider2dotFive === void 0 ? void 0 : slider2dotFive.classList.remove("dot-active");
         slider2dotFour === null || slider2dotFour === void 0 ? void 0 : slider2dotFour.classList.add("dot-active");
@@ -180,6 +273,7 @@ slider2LeftBtn === null || slider2LeftBtn === void 0 ? void 0 : slider2LeftBtn.a
     }
     if (activeSlide === 6) {
         slide5 === null || slide5 === void 0 ? void 0 : slide5.classList.remove("translate-x");
+        card5 === null || card5 === void 0 ? void 0 : card5.classList.remove("translate-x");
         activeSlide = 5;
         slider2dotSix === null || slider2dotSix === void 0 ? void 0 : slider2dotSix.classList.remove("dot-active");
         slider2dotFive === null || slider2dotFive === void 0 ? void 0 : slider2dotFive.classList.add("dot-active");
@@ -189,6 +283,7 @@ slider2LeftBtn === null || slider2LeftBtn === void 0 ? void 0 : slider2LeftBtn.a
 slider2RightBtn === null || slider2RightBtn === void 0 ? void 0 : slider2RightBtn.addEventListener("click", () => {
     if (activeSlide === 1) {
         slide1 === null || slide1 === void 0 ? void 0 : slide1.classList.add("translate-x");
+        card1 === null || card1 === void 0 ? void 0 : card1.classList.add("translate-x");
         activeSlide = 2;
         slider2dotOne === null || slider2dotOne === void 0 ? void 0 : slider2dotOne.classList.remove("dot-active");
         slider2dotTwo === null || slider2dotTwo === void 0 ? void 0 : slider2dotTwo.classList.add("dot-active");
@@ -196,6 +291,7 @@ slider2RightBtn === null || slider2RightBtn === void 0 ? void 0 : slider2RightBt
     }
     if (activeSlide === 2) {
         slide2 === null || slide2 === void 0 ? void 0 : slide2.classList.add("translate-x");
+        card2 === null || card2 === void 0 ? void 0 : card2.classList.add("translate-x");
         activeSlide = 3;
         slider2dotTwo === null || slider2dotTwo === void 0 ? void 0 : slider2dotTwo.classList.remove("dot-active");
         slider2dotThree === null || slider2dotThree === void 0 ? void 0 : slider2dotThree.classList.add("dot-active");
@@ -203,6 +299,7 @@ slider2RightBtn === null || slider2RightBtn === void 0 ? void 0 : slider2RightBt
     }
     if (activeSlide === 3) {
         slide3 === null || slide3 === void 0 ? void 0 : slide3.classList.add("translate-x");
+        card3 === null || card3 === void 0 ? void 0 : card3.classList.add("translate-x");
         activeSlide = 4;
         slider2dotThree === null || slider2dotThree === void 0 ? void 0 : slider2dotThree.classList.remove("dot-active");
         slider2dotFour === null || slider2dotFour === void 0 ? void 0 : slider2dotFour.classList.add("dot-active");
@@ -210,6 +307,7 @@ slider2RightBtn === null || slider2RightBtn === void 0 ? void 0 : slider2RightBt
     }
     if (activeSlide === 4) {
         slide4 === null || slide4 === void 0 ? void 0 : slide4.classList.add("translate-x");
+        card4 === null || card4 === void 0 ? void 0 : card4.classList.add("translate-x");
         activeSlide = 5;
         slider2dotFour === null || slider2dotFour === void 0 ? void 0 : slider2dotFour.classList.remove("dot-active");
         slider2dotFive === null || slider2dotFive === void 0 ? void 0 : slider2dotFive.classList.add("dot-active");
@@ -217,6 +315,7 @@ slider2RightBtn === null || slider2RightBtn === void 0 ? void 0 : slider2RightBt
     }
     if (activeSlide === 5) {
         slide5 === null || slide5 === void 0 ? void 0 : slide5.classList.add("translate-x");
+        card5 === null || card5 === void 0 ? void 0 : card5.classList.add("translate-x");
         activeSlide = 6;
         slider2dotFive === null || slider2dotFive === void 0 ? void 0 : slider2dotFive.classList.remove("dot-active");
         slider2dotSix === null || slider2dotSix === void 0 ? void 0 : slider2dotSix.classList.add("dot-active");
@@ -229,6 +328,12 @@ slider2RightBtn === null || slider2RightBtn === void 0 ? void 0 : slider2RightBt
         slide4 === null || slide4 === void 0 ? void 0 : slide4.classList.remove("translate-x");
         slide5 === null || slide5 === void 0 ? void 0 : slide5.classList.remove("translate-x");
         slide6 === null || slide6 === void 0 ? void 0 : slide6.classList.remove("translate-x");
+        card1 === null || card1 === void 0 ? void 0 : card1.classList.remove("translate-x");
+        card2 === null || card2 === void 0 ? void 0 : card2.classList.remove("translate-x");
+        card3 === null || card3 === void 0 ? void 0 : card3.classList.remove("translate-x");
+        card4 === null || card4 === void 0 ? void 0 : card4.classList.remove("translate-x");
+        card5 === null || card5 === void 0 ? void 0 : card5.classList.remove("translate-x");
+        card6 === null || card6 === void 0 ? void 0 : card6.classList.remove("translate-x");
         activeSlide = 1;
         slider2dotSix === null || slider2dotSix === void 0 ? void 0 : slider2dotSix.classList.remove("dot-active");
         slider2dotOne === null || slider2dotOne === void 0 ? void 0 : slider2dotOne.classList.add("dot-active");
@@ -238,6 +343,7 @@ slider2RightBtn === null || slider2RightBtn === void 0 ? void 0 : slider2RightBt
 setInterval(() => {
     if (activeSlide === 1) {
         slide1 === null || slide1 === void 0 ? void 0 : slide1.classList.add("translate-x");
+        card1 === null || card1 === void 0 ? void 0 : card1.classList.add("translate-x");
         activeSlide = 2;
         slider2dotOne === null || slider2dotOne === void 0 ? void 0 : slider2dotOne.classList.remove("dot-active");
         slider2dotTwo === null || slider2dotTwo === void 0 ? void 0 : slider2dotTwo.classList.add("dot-active");
@@ -245,6 +351,7 @@ setInterval(() => {
     }
     if (activeSlide === 2) {
         slide2 === null || slide2 === void 0 ? void 0 : slide2.classList.add("translate-x");
+        card2 === null || card2 === void 0 ? void 0 : card2.classList.add("translate-x");
         activeSlide = 3;
         slider2dotTwo === null || slider2dotTwo === void 0 ? void 0 : slider2dotTwo.classList.remove("dot-active");
         slider2dotThree === null || slider2dotThree === void 0 ? void 0 : slider2dotThree.classList.add("dot-active");
@@ -252,6 +359,7 @@ setInterval(() => {
     }
     if (activeSlide === 3) {
         slide3 === null || slide3 === void 0 ? void 0 : slide3.classList.add("translate-x");
+        card3 === null || card3 === void 0 ? void 0 : card3.classList.add("translate-x");
         activeSlide = 4;
         slider2dotThree === null || slider2dotThree === void 0 ? void 0 : slider2dotThree.classList.remove("dot-active");
         slider2dotFour === null || slider2dotFour === void 0 ? void 0 : slider2dotFour.classList.add("dot-active");
@@ -259,6 +367,7 @@ setInterval(() => {
     }
     if (activeSlide === 4) {
         slide4 === null || slide4 === void 0 ? void 0 : slide4.classList.add("translate-x");
+        card4 === null || card4 === void 0 ? void 0 : card4.classList.add("translate-x");
         activeSlide = 5;
         slider2dotFour === null || slider2dotFour === void 0 ? void 0 : slider2dotFour.classList.remove("dot-active");
         slider2dotFive === null || slider2dotFive === void 0 ? void 0 : slider2dotFive.classList.add("dot-active");
@@ -266,6 +375,7 @@ setInterval(() => {
     }
     if (activeSlide === 5) {
         slide5 === null || slide5 === void 0 ? void 0 : slide5.classList.add("translate-x");
+        card5 === null || card5 === void 0 ? void 0 : card5.classList.add("translate-x");
         activeSlide = 6;
         slider2dotFive === null || slider2dotFive === void 0 ? void 0 : slider2dotFive.classList.remove("dot-active");
         slider2dotSix === null || slider2dotSix === void 0 ? void 0 : slider2dotSix.classList.add("dot-active");
@@ -278,9 +388,15 @@ setInterval(() => {
         slide4 === null || slide4 === void 0 ? void 0 : slide4.classList.remove("translate-x");
         slide5 === null || slide5 === void 0 ? void 0 : slide5.classList.remove("translate-x");
         slide6 === null || slide6 === void 0 ? void 0 : slide6.classList.remove("translate-x");
+        card1 === null || card1 === void 0 ? void 0 : card1.classList.remove("translate-x");
+        card2 === null || card2 === void 0 ? void 0 : card2.classList.remove("translate-x");
+        card3 === null || card3 === void 0 ? void 0 : card3.classList.remove("translate-x");
+        card4 === null || card4 === void 0 ? void 0 : card4.classList.remove("translate-x");
+        card5 === null || card5 === void 0 ? void 0 : card5.classList.remove("translate-x");
+        card6 === null || card6 === void 0 ? void 0 : card6.classList.remove("translate-x");
         activeSlide = 1;
         slider2dotSix === null || slider2dotSix === void 0 ? void 0 : slider2dotSix.classList.remove("dot-active");
         slider2dotOne === null || slider2dotOne === void 0 ? void 0 : slider2dotOne.classList.add("dot-active");
         return;
     }
-}, 3000);
+}, 5000);

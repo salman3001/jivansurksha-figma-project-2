@@ -16,6 +16,9 @@ const burgermenu = document.querySelector<HTMLDivElement>("#burger-menu");
 const sideNavbarContent = document.querySelector<HTMLDivElement>(
   "#side-navbar-content"
 );
+
+const closeBtn =
+  document.querySelectorAll<HTMLImageElement>(".close-btn-togel");
 const sideNavbarBackdrop = document.querySelector<HTMLDivElement>(
   "#side-navbar-backdrop"
 );
@@ -23,12 +26,23 @@ const sideNavbarBackdrop = document.querySelector<HTMLDivElement>(
 sideNavbarContent?.addEventListener("click", (e) => {
   e.stopPropagation();
 });
+
 burgermenu?.addEventListener("click", () => {
   if (!sideNavbarBackdrop?.classList.contains("collapse")) {
     sideNavbarBackdrop?.classList.add("collapse");
   } else {
     sideNavbarBackdrop?.classList.remove("collapse");
   }
+});
+
+closeBtn.forEach((btn: HTMLImageElement) => {
+  btn?.addEventListener("click", () => {
+    if (!sideNavbarBackdrop?.classList.contains("collapse")) {
+      sideNavbarBackdrop?.classList.add("collapse");
+    } else {
+      sideNavbarBackdrop?.classList.remove("collapse");
+    }
+  });
 });
 
 sideNavbarBackdrop?.addEventListener("click", () => {
@@ -145,6 +159,94 @@ setInterval(() => {
   }
 }, 3000);
 
+//section-6 slider logic
+const section6LeftBtn = document.querySelector<HTMLImageElement>(
+  "#section-6-btn-left"
+);
+const section6RightBtn = document.querySelector<HTMLImageElement>(
+  "#section-6-btn-right"
+);
+
+const section6ImgOne =
+  document.querySelector<HTMLImageElement>(".section-6-img-1");
+
+const section6ImgTwo =
+  document.querySelector<HTMLImageElement>(".section-6-img-2");
+
+const section6ImgThree =
+  document.querySelector<HTMLImageElement>(".section-6-img-3");
+
+let secction6ActiveSlide = 1;
+
+section6RightBtn?.addEventListener("click", () => {
+  if (secction6ActiveSlide === 1) {
+    (section6ImgOne as HTMLImageElement).style.display = "none";
+    (section6ImgTwo as HTMLImageElement).style.display = "block";
+    secction6ActiveSlide = 2;
+    return;
+  }
+  if (secction6ActiveSlide === 2) {
+    (section6ImgTwo as HTMLImageElement).style.display = "none";
+    (section6ImgThree as HTMLImageElement).style.display = "block";
+    secction6ActiveSlide = 3;
+
+    return;
+  }
+  if (secction6ActiveSlide === 3) {
+    (section6ImgThree as HTMLImageElement).style.display = "none";
+    (section6ImgOne as HTMLImageElement).style.display = "block";
+    secction6ActiveSlide = 1;
+
+    return;
+  }
+});
+
+section6LeftBtn?.addEventListener("click", () => {
+  if (secction6ActiveSlide === 1) {
+    (section6ImgOne as HTMLImageElement).style.display = "none";
+    (section6ImgThree as HTMLImageElement).style.display = "block";
+    secction6ActiveSlide = 3;
+    return;
+  }
+  if (secction6ActiveSlide === 2) {
+    (section6ImgTwo as HTMLImageElement).style.display = "none";
+    (section6ImgOne as HTMLImageElement).style.display = "block";
+    secction6ActiveSlide = 1;
+
+    return;
+  }
+  if (secction6ActiveSlide === 3) {
+    (section6ImgThree as HTMLImageElement).style.display = "none";
+    (section6ImgTwo as HTMLImageElement).style.display = "block";
+    secction6ActiveSlide = 2;
+
+    return;
+  }
+});
+
+setInterval(() => {
+  if (secction6ActiveSlide === 1) {
+    (section6ImgOne as HTMLImageElement).style.display = "none";
+    (section6ImgTwo as HTMLImageElement).style.display = "block";
+    secction6ActiveSlide = 2;
+    return;
+  }
+  if (secction6ActiveSlide === 2) {
+    (section6ImgTwo as HTMLImageElement).style.display = "none";
+    (section6ImgThree as HTMLImageElement).style.display = "block";
+    secction6ActiveSlide = 3;
+
+    return;
+  }
+  if (secction6ActiveSlide === 3) {
+    (section6ImgThree as HTMLImageElement).style.display = "none";
+    (section6ImgOne as HTMLImageElement).style.display = "block";
+    secction6ActiveSlide = 1;
+
+    return;
+  }
+}, 3000);
+
 // section-7 crousel logic here
 
 const slide1 = document.querySelector("#crousel2-slid1");
@@ -153,6 +255,12 @@ const slide3 = document.querySelector("#crousel2-slid3");
 const slide4 = document.querySelector("#crousel2-slid4");
 const slide5 = document.querySelector("#crousel2-slid5");
 const slide6 = document.querySelector("#crousel2-slid6");
+const card1 = document.querySelector("#card-1");
+const card2 = document.querySelector("#card-2");
+const card3 = document.querySelector("#card-3");
+const card4 = document.querySelector("#card-4");
+const card5 = document.querySelector("#card-5");
+const card6 = document.querySelector("#card-6");
 
 const slider2LeftBtn =
   document.querySelector<HTMLImageElement>("#crousel2-btn-left");
@@ -176,6 +284,11 @@ slider2LeftBtn?.addEventListener("click", () => {
     slide3?.classList.add("translate-x");
     slide4?.classList.add("translate-x");
     slide5?.classList.add("translate-x");
+    card1?.classList.add("translate-x");
+    card2?.classList.add("translate-x");
+    card3?.classList.add("translate-x");
+    card4?.classList.add("translate-x");
+    card5?.classList.add("translate-x");
     activeSlide = 6;
     slider2dotOne?.classList.remove("dot-active");
     slider2dotSix?.classList.add("dot-active");
@@ -183,6 +296,7 @@ slider2LeftBtn?.addEventListener("click", () => {
   }
   if (activeSlide === 2) {
     slide1?.classList.remove("translate-x");
+    card1?.classList.remove("translate-x");
     activeSlide = 1;
     slider2dotTwo?.classList.remove("dot-active");
     slider2dotOne?.classList.add("dot-active");
@@ -190,6 +304,7 @@ slider2LeftBtn?.addEventListener("click", () => {
   }
   if (activeSlide === 3) {
     slide2?.classList.remove("translate-x");
+    card2?.classList.remove("translate-x");
     activeSlide = 2;
     slider2dotThree?.classList.remove("dot-active");
     slider2dotTwo?.classList.add("dot-active");
@@ -197,6 +312,7 @@ slider2LeftBtn?.addEventListener("click", () => {
   }
   if (activeSlide === 4) {
     slide3?.classList.remove("translate-x");
+    card3?.classList.remove("translate-x");
     activeSlide = 3;
     slider2dotFour?.classList.remove("dot-active");
     slider2dotThree?.classList.add("dot-active");
@@ -204,6 +320,7 @@ slider2LeftBtn?.addEventListener("click", () => {
   }
   if (activeSlide === 5) {
     slide4?.classList.remove("translate-x");
+    card4?.classList.remove("translate-x");
     activeSlide = 4;
     slider2dotFive?.classList.remove("dot-active");
     slider2dotFour?.classList.add("dot-active");
@@ -211,6 +328,7 @@ slider2LeftBtn?.addEventListener("click", () => {
   }
   if (activeSlide === 6) {
     slide5?.classList.remove("translate-x");
+    card5?.classList.remove("translate-x");
     activeSlide = 5;
     slider2dotSix?.classList.remove("dot-active");
     slider2dotFive?.classList.add("dot-active");
@@ -221,6 +339,7 @@ slider2LeftBtn?.addEventListener("click", () => {
 slider2RightBtn?.addEventListener("click", () => {
   if (activeSlide === 1) {
     slide1?.classList.add("translate-x");
+    card1?.classList.add("translate-x");
     activeSlide = 2;
     slider2dotOne?.classList.remove("dot-active");
     slider2dotTwo?.classList.add("dot-active");
@@ -228,6 +347,7 @@ slider2RightBtn?.addEventListener("click", () => {
   }
   if (activeSlide === 2) {
     slide2?.classList.add("translate-x");
+    card2?.classList.add("translate-x");
     activeSlide = 3;
     slider2dotTwo?.classList.remove("dot-active");
     slider2dotThree?.classList.add("dot-active");
@@ -235,6 +355,7 @@ slider2RightBtn?.addEventListener("click", () => {
   }
   if (activeSlide === 3) {
     slide3?.classList.add("translate-x");
+    card3?.classList.add("translate-x");
     activeSlide = 4;
     slider2dotThree?.classList.remove("dot-active");
     slider2dotFour?.classList.add("dot-active");
@@ -242,6 +363,7 @@ slider2RightBtn?.addEventListener("click", () => {
   }
   if (activeSlide === 4) {
     slide4?.classList.add("translate-x");
+    card4?.classList.add("translate-x");
     activeSlide = 5;
     slider2dotFour?.classList.remove("dot-active");
     slider2dotFive?.classList.add("dot-active");
@@ -249,6 +371,7 @@ slider2RightBtn?.addEventListener("click", () => {
   }
   if (activeSlide === 5) {
     slide5?.classList.add("translate-x");
+    card5?.classList.add("translate-x");
     activeSlide = 6;
     slider2dotFive?.classList.remove("dot-active");
     slider2dotSix?.classList.add("dot-active");
@@ -261,6 +384,12 @@ slider2RightBtn?.addEventListener("click", () => {
     slide4?.classList.remove("translate-x");
     slide5?.classList.remove("translate-x");
     slide6?.classList.remove("translate-x");
+    card1?.classList.remove("translate-x");
+    card2?.classList.remove("translate-x");
+    card3?.classList.remove("translate-x");
+    card4?.classList.remove("translate-x");
+    card5?.classList.remove("translate-x");
+    card6?.classList.remove("translate-x");
     activeSlide = 1;
     slider2dotSix?.classList.remove("dot-active");
     slider2dotOne?.classList.add("dot-active");
@@ -271,6 +400,7 @@ slider2RightBtn?.addEventListener("click", () => {
 setInterval(() => {
   if (activeSlide === 1) {
     slide1?.classList.add("translate-x");
+    card1?.classList.add("translate-x");
     activeSlide = 2;
     slider2dotOne?.classList.remove("dot-active");
     slider2dotTwo?.classList.add("dot-active");
@@ -278,6 +408,7 @@ setInterval(() => {
   }
   if (activeSlide === 2) {
     slide2?.classList.add("translate-x");
+    card2?.classList.add("translate-x");
     activeSlide = 3;
     slider2dotTwo?.classList.remove("dot-active");
     slider2dotThree?.classList.add("dot-active");
@@ -285,6 +416,7 @@ setInterval(() => {
   }
   if (activeSlide === 3) {
     slide3?.classList.add("translate-x");
+    card3?.classList.add("translate-x");
     activeSlide = 4;
     slider2dotThree?.classList.remove("dot-active");
     slider2dotFour?.classList.add("dot-active");
@@ -292,6 +424,7 @@ setInterval(() => {
   }
   if (activeSlide === 4) {
     slide4?.classList.add("translate-x");
+    card4?.classList.add("translate-x");
     activeSlide = 5;
     slider2dotFour?.classList.remove("dot-active");
     slider2dotFive?.classList.add("dot-active");
@@ -299,6 +432,7 @@ setInterval(() => {
   }
   if (activeSlide === 5) {
     slide5?.classList.add("translate-x");
+    card5?.classList.add("translate-x");
     activeSlide = 6;
     slider2dotFive?.classList.remove("dot-active");
     slider2dotSix?.classList.add("dot-active");
@@ -311,9 +445,15 @@ setInterval(() => {
     slide4?.classList.remove("translate-x");
     slide5?.classList.remove("translate-x");
     slide6?.classList.remove("translate-x");
+    card1?.classList.remove("translate-x");
+    card2?.classList.remove("translate-x");
+    card3?.classList.remove("translate-x");
+    card4?.classList.remove("translate-x");
+    card5?.classList.remove("translate-x");
+    card6?.classList.remove("translate-x");
     activeSlide = 1;
     slider2dotSix?.classList.remove("dot-active");
     slider2dotOne?.classList.add("dot-active");
     return;
   }
-}, 3000);
+}, 5000);

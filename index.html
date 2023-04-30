@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JivanSurksha</title>
-    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="./main.css" />
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap");
       @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
@@ -19,21 +19,26 @@
       </div>
       <ul>
         <li>
-          <a href="/home">Home</a>
+          <a href="#home">Home</a>
         </li>
         <li>
-          <a href="/About ">About</a>
+          <a href="#aboutus ">About</a>
         </li>
         <li>
-          <a href="/Download">Download</a>
+          <a href="#download">Download</a>
         </li>
         <li>
-          <a href="/Company">Company</a>
+          <a href="#why-choose-us">Why us</a>
         </li>
-        <li>
-          <a href="/Contact">Contact</a>
-        </li>
-        <button class="nav-download-btn">Download</button>
+
+        <div class="btn-container">
+          <button class="btn-appstore">
+            <img src="./images/apple-logo.svg" alt="" /> App Store
+          </button>
+          <button class="btn-playstore">
+            <img src="./images//playstore-logo.svg" alt="" /> PlayS Store
+          </button>
+        </div>
       </ul>
       <div class="burger-menu" id="burger-menu">
         <img src="./images//menu-icon.svg" alt="" />
@@ -43,30 +48,36 @@
     <nav id="side-navbar" class="side-navbar">
       <div id="side-navbar-backdrop" class="backdrop">
         <div id="side-navbar-content" class="content">
+          <div class="close-btn">
+            <img class="close-btn-togel" src="./images/cross.svg" alt="" />
+          </div>
           <ul>
             <li>
-              <a href="/home">Home</a>
+              <a class="close-btn-togel" href="#home">Home</a>
             </li>
             <li>
-              <a href="/About ">About</a>
+              <a class="close-btn-togel" href="#aboutus ">About</a>
             </li>
             <li>
-              <a href="/Download">Download</a>
+              <a class="close-btn-togel" href="#download">Download</a>
             </li>
             <li>
-              <a href="/Company">Company</a>
+              <a class="close-btn-togel" href="#why-choose-us">Why us</a>
             </li>
-            <li>
-              <a href="/Contact">Contact</a>
-            </li>
-            <button class="nav-download-btn">Download</button>
+
+            <button class="btn-appstore">
+              <img src="./images/apple-logo.svg" alt="" /> App Store
+            </button>
+            <button class="btn-playstore">
+              <img src="./images//playstore-logo.svg" alt="" /> PlayS Store
+            </button>
           </ul>
         </div>
       </div>
     </nav>
     <main>
       <!-- Section1 -->
-      <section class="index-section-1 pading-1 pading-2">
+      <section id="home" class="index-section-1 pading-1 pading-2">
         <div class="index-section-1-left">
           <div>
             <p class="index-section-1-title">Customer Review</p>
@@ -77,23 +88,25 @@
             alterations and repairs. You can check our services to know more.
             You can check our services to know more.
           </p>
-          <div class="btn-container">
-            <button class="btn-appstore">
-              <img src="./images/apple-logo.svg" alt="" /> App Store
-            </button>
-            <button class="btn-playstore">
-              <img src="./images//playstore-logo.svg" alt="" /> PlayS Store
-            </button>
-          </div>
-          <div class="user-count-container">
-            <div>
-              <h3>2M+</h3>
-              <p>Users uses the app</p>
-              <div class="divider"></div>
+          <div class="bottom">
+            <div class="btn-container">
+              <button class="btn-appstore">
+                <img src="./images/apple-logo.svg" alt="" /> App Store
+              </button>
+              <button class="btn-playstore">
+                <img src="./images//playstore-logo.svg" alt="" /> PlayS Store
+              </button>
             </div>
-            <div>
-              <h3>$15M+</h3>
-              <p>Users uses the app</p>
+            <div class="user-count-container">
+              <div>
+                <h3>2M+</h3>
+                <p>Users uses the app</p>
+                <div class="divider"></div>
+              </div>
+              <div>
+                <h3>$15M+</h3>
+                <p>Users uses the app</p>
+              </div>
             </div>
           </div>
         </div>
@@ -102,7 +115,7 @@
         </div>
       </section>
       <!-- section2 -->
-      <section class="index-section-2 pading-1 pading-2">
+      <section id="aboutus" class="index-section-2 pading-1 pading-2">
         <div>
           <p class="index-section-2-title">Customer Review</p>
           <div class="grid1">
@@ -163,19 +176,19 @@
             <div class="img-container">
               <img
                 id="crousel-1-img-1"
-                src="./images/section3-art-2.png"
+                src="./images/section-6-img1.png"
                 alt=""
                 class="left"
               />
               <img
                 id="crousel-1-img-2"
-                src="./images/section3-art-2.png"
+                src="./images/section-6-img2.png"
                 alt=""
                 class="mid"
               />
               <img
                 id="crousel-1-img-3"
-                src="./images/section3-art-2.png"
+                src="./images/section-6-img3.png"
                 alt=""
                 class="rightc"
               />
@@ -192,7 +205,7 @@
         </div>
       </section>
       <!-- section 4 -->
-      <section class="index-section-4 pading-1 pading-2">
+      <section id="why-choose-us" class="index-section-4 pading-1 pading-2">
         <div>
           <p class="title">Customer Review</p>
           <div class="grid-1">
@@ -217,7 +230,7 @@
             </p>
           </div>
           <div class="container-image">
-            <!-- <img src="./images/section-4-art.png" alt="" /> -->
+            <img src="./images/section-4-art.png" alt="" />
           </div>
           <div class="container-texts">
             <div>
@@ -294,7 +307,7 @@
         </div>
       </section>
       <!-- section-6 -->
-      <section class="section-6 pading-1 pading-2">
+      <section id="download" class="section-6 pading-1 pading-2">
         <div class="container">
           <div class="left pading-1 pading-2">
             <div>
@@ -317,26 +330,109 @@
             </div>
           </div>
           <div class="right">
-            <img src="./images/section-6-art.png" alt="" />
+            <div class="img-container">
+              <img
+                class="section-6-img-1"
+                src="./images/section-6-img2.png"
+                alt=""
+              />
+              <img
+                class="section-6-img-2"
+                src="./images/section-6-img1.png"
+                alt=""
+              />
+
+              <img
+                class="section-6-img-3"
+                src="./images/section-6-img3.png"
+                alt=""
+              />
+            </div>
+            <div class="arrow-btn">
+              <img
+                id="section-6-btn-left"
+                src="./images/arrow-left.svg"
+                class="arrow-btn-left"
+                alt=""
+              />
+              <img
+                id="section-6-btn-right"
+                src="./images/arrow-right.svg"
+                class="arrow-btn-right"
+                alt=""
+              />
+            </div>
           </div>
         </div>
       </section>
       <!-- section-7 -->
-      <section class="section-7 pading-1 pading-2">
+      <section id="testimonial" sec class="section-7 pading-1 pading-2">
         <div class="left">
           <div class="up">
             <p>Customer Reviews</p>
             <h3>96% our patients satisfied with our services</h3>
           </div>
           <div class="down">
-            <h5>Jone Doe</h5>
-            <p>
-              Yes, apart from dry cleaning and laundry services, we also offer
-              alterations and repairs. You can check our services to know more.
-              You can check our services to know more. Yes, apart from dry
-              cleaning and laundry services Yes, apart from
-            </p>
-            <img src="./images/rating-white.svg" alt="" />
+            <div id="card-1" class="card">
+              <h5>Jone Doe</h5>
+              <p>
+                Yes, apart from dry cleaning and laundry services, we also offer
+                alterations and repairs. You can check our services to know
+                more. You can check our services to know more. Yes, apart from
+                dry cleaning and laundry services Yes, apart from
+              </p>
+              <img src="./images/rating-white.svg" alt="" />
+            </div>
+            <div id="card-2" class="card">
+              <h5>Jone Doe 2</h5>
+              <p>
+                Yes, apart from dry cleaning and laundry services, we also offer
+                alterations and repairs. You can check our services to know
+                more. You can check our services to know more. Yes, apart from
+                dry cleaning and laundry services Yes, apart from
+              </p>
+              <img src="./images/rating-white.svg" alt="" />
+            </div>
+            <div id="card-3" class="card">
+              <h5>Jone Doe 3</h5>
+              <p>
+                Yes, apart from dry cleaning and laundry services, we also offer
+                alterations and repairs. You can check our services to know
+                more. You can check our services to know more. Yes, apart from
+                dry cleaning and laundry services Yes, apart from
+              </p>
+              <img src="./images/rating-white.svg" alt="" />
+            </div>
+            <div id="card-4" class="card">
+              <h5>Jone Doe 4</h5>
+              <p>
+                Yes, apart from dry cleaning and laundry services, we also offer
+                alterations and repairs. You can check our services to know
+                more. You can check our services to know more. Yes, apart from
+                dry cleaning and laundry services Yes, apart from
+              </p>
+              <img src="./images/rating-white.svg" alt="" />
+            </div>
+            <div id="card-5" class="card">
+              <h5>Jone Doe 5</h5>
+              <p>
+                Yes, apart from dry cleaning and laundry services, we also offer
+                alterations and repairs. You can check our services to know
+                more. You can check our services to know more. Yes, apart from
+                dry cleaning and laundry services Yes, apart from
+              </p>
+              <img src="./images/rating-white.svg" alt="" />
+            </div>
+            <div id="card-6" class="card">
+              <h5>Jone Doe 6</h5>
+              <p>
+                Yes, apart from dry cleaning and laundry services, we also offer
+                alterations and repairs. You can check our services to know
+                more. You can check our services to know more. Yes, apart from
+                dry cleaning and laundry services Yes, apart from
+              </p>
+              <img src="./images/rating-white.svg" alt="" />
+            </div>
           </div>
         </div>
         <div class="right">
@@ -408,7 +504,7 @@
     <footer class="footer-2 pading-1">
       <div class="grid-item-1">
         <div class="logo-container">
-          <img src="./images/brand-logo-2.png" alt="" />
+          <img src="./images/brand-logo.svg " alt="" />
         </div>
         <div>
           <p>
@@ -423,7 +519,7 @@
         <div class="icons">
           <a href="#"> <img src="./images/fb-icon.svg" alt="" /> </a>
           <a href="#"> <img src="./images/twitter-icon.svg" alt="" /> </a>
-          <a href="#"> <img src="./images/insta-icon.svg" alt="" /> </a>
+          <a href="#"> <img src="./images/insta.png" alt="" /> </a>
           <a href="#"> <img src="./images/linked-icon.svg" alt="" /> </a>
           <a href="#"> <img src="./images/pintrest-icon.svg" alt="" /> </a>
         </div>
@@ -450,6 +546,9 @@
         <a href="#">Pricing</a>
       </div>
     </footer>
+    <div class="copyright pading-1">
+      <p>copyright © 2023 JivanSurksha. All rights reserved.</p>
+    </div>
     <script src="./main.js"></script>
   </body>
 </html>

@@ -10,6 +10,7 @@
   box-sizing: inherit;
 }
 html {
+  scroll-behavior: smooth;
   font-size: 12px;
   font-family: "Playfair Display", serif;
   box-sizing: border-box;
@@ -80,7 +81,7 @@ button {
 
 .bg-white {
   background-color: white;
-  box-shadow: 0px 5px 6px -1px rgba(49, 49, 49, 0.51);
+  box-shadow: 0px 5px 6px -1px rgba(186, 186, 186, 0.247);
   transition: backbackground-color 0.5s, box-shadow 0.5s;
 }
 
@@ -122,6 +123,39 @@ button {
   width: 30px;
 }
 
+.main-navbar .btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.main-navbar .btn-appstore {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 12.43rem;
+  height: 3.25rem;
+  color: white;
+  background-color: var(--color-secondary);
+  font-size: 1.75;
+  font-weight: 653;
+}
+
+.main-navbar .btn-playstore {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  width: 12.43rem;
+  height: 3.25rem;
+  color: var(--color-secondary);
+  border-color: var(--color-secondary);
+  background-color: white;
+  font-size: 1.75;
+  font-weight: 653;
+}
+
 .nav-download-btn {
   width: 12rem;
   height: 3.75rem;
@@ -151,10 +185,25 @@ button {
 }
 
 .side-navbar .backdrop .content {
+  position: relative;
+  overflow: hidden;
   width: 80%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
   background-color: white;
-  box-shadow: -10px 1px 9px -3px rgba(0, 0, 0, 0.6);
+}
+
+.side-navbar .close-btn {
+  position: relative;
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  padding: 20px;
+  justify-content: end;
+  right: 0px;
 }
 
 .side-navbar .backdrop .content ul {
@@ -162,10 +211,11 @@ button {
   flex-direction: column;
   gap: 50px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: start;
+  align-items: start;
+  max-width: 200px;
   overflow: hidden;
-  padding-top: 100px;
+  padding-top: 10px;
 }
 
 .side-navbar .backdrop .content ul li a {
@@ -174,6 +224,40 @@ button {
   font-size: 2rem;
   font-weight: 500;
   font-family: "Roboto", sans-serif;
+}
+
+.side-navbar .btn-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.side-navbar .btn-appstore {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 12.43rem;
+  height: 3.25rem;
+  color: white;
+  background-color: var(--color-secondary);
+  font-size: 1.75;
+  font-weight: 653;
+}
+
+.side-navbar .btn-playstore {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  width: 12.43rem;
+  height: 3.25rem;
+  color: var(--color-secondary);
+  border-color: var(--color-secondary);
+  background-color: white;
+  font-size: 1.75;
+  font-weight: 653;
 }
 
 @media only screen and (min-width: 992px) {
@@ -219,6 +303,17 @@ button {
   font-size: 1.125rem;
   font-family: "Roboto", sans-serif;
   max-width: 641px;
+}
+
+.index-section-1 .bottom {
+  display: flex;
+  gap: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+  .index-section-1 .bottom {
+    flex-direction: column;
+  }
 }
 
 .index-section-1 .btn-container {
@@ -282,6 +377,28 @@ button {
   font-size: 1rem;
 }
 
+@media only screen and (max-width: 768px) {
+  .index-section-1 .btn-container {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .index-section-1-left .user-count-container {
+    flex-direction: column;
+  }
+
+  .index-section-1-left .btn-playstore {
+    width: 11.43rem;
+    height: 3.25rem;
+    gap: 2px;
+  }
+
+  .index-section-1-left .btn-appstore {
+    width: 11.43rem;
+    height: 3.25rem;
+    gap: 2px;
+  }
+}
 .index-section-1-right {
   display: flex;
   justify-content: center;
@@ -312,7 +429,7 @@ button {
     order: 1;
   }
   .index-section-1-left .user-count-container h3 {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 }
 
@@ -641,6 +758,7 @@ button {
 @media only screen and (max-width: 600px) {
   .index-section-3 .grid .right {
     padding: 0px;
+    display: none;
   }
   .index-section-3 .grid .right .left {
     left: 40px;
@@ -858,10 +976,7 @@ button {
 }
 
 .index-section-4 .grid-2 .container-image {
-  background-image: url("./images/section-4-art.png");
-  background-repeat: no-repeat;
-  background-position: left;
-  background-size: contain;
+  padding: 1rem;
   min-height: 150px;
   border-right: 2px solid #e6e6e6;
 }
@@ -1011,13 +1126,11 @@ button {
     gap: 10px;
   }
   .section-5 .right .up {
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-bottom: 1rem;
+    padding: 2rem;
   }
 
   .section-5 .right .down {
-    padding: 1rem;
+    padding: 2rem;
   }
 }
 
@@ -1094,6 +1207,7 @@ button {
 
 .section-6 .container .right {
   display: flex;
+  position: relative;
   width: 100%;
   align-items: end;
   justify-content: center;
@@ -1102,9 +1216,52 @@ button {
   padding-right: 20px;
 }
 
+.section-6 .container .right .img-container {
+  background-image: url(./images/section-6-bg.svg);
+  background-position: center;
+  background-size: cover;
+  border-radius: 20px 20px 0px 0px;
+  display: flex;
+  padding: 40px 40px 0px 40px;
+  align-items: end;
+  overflow: hidden;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.2;
+  }
+  top {
+    opacity: 1;
+  }
+}
+
 .section-6 .container .right img {
   max-width: 100%;
   max-height: 500px;
+  animation: fade 1s normal;
+}
+.section-6 .container .right .section-6-img-1 {
+  display: block;
+}
+.section-6 .container .right .section-6-img-2 {
+  display: none;
+}
+.section-6 .container .right .section-6-img-3 {
+  display: none;
+}
+
+.section-6 .container .right .arrow-btn {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  padding: 40px;
+  top: 40%;
+
+  justify-content: space-between;
+}
+.section-6 .container .right .arrow-btn img {
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 992px) {
@@ -1148,8 +1305,9 @@ button {
 }
 
 .section-7 .left .down {
+  position: relative;
   background-color: var(--color-primary);
-  height: 100%;
+  height: 300px;
   display: flex;
   justify-content: start;
   align-items: start;
@@ -1157,17 +1315,58 @@ button {
   padding: 3rem;
   font-style: normal;
   gap: 20px;
+  overflow: hidden;
 }
 
-.section-7 .left .down h5 {
+.section-7 .left .down .card {
+  position: absolute;
+  background-color: #1f7a8c;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  transform: translateX(0%);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: start;
+  padding: 3rem;
+  transition: transform 0.5s;
+}
+
+.section-7 .left .down .translate-x {
+  transform: translateX(-105%);
+  transition: transform 0.5s;
+  box-shadow: 0px 5px 6px -1px rgba(49, 49, 49, 1);
+}
+
+.section-7 .left .down #card-1 {
+  z-index: 10;
+}
+.section-7 .left .down #card-2 {
+  z-index: 9;
+}
+.section-7 .left .down #card-3 {
+  z-index: 7;
+}
+.section-7 .left .down #card-4 {
+  z-index: 5;
+}
+.section-7 .left .down #card-5 {
+  z-index: 3;
+}
+.section-7 .left .down #card-6 {
+  z-index: 1;
+}
+
+.section-7 .left .down .card h5 {
   color: white;
 }
 
-.section-7 .left .down img {
+.section-7 .left .down .card img {
   height: 1.6rem;
 }
 
-.section-7 .left .down p {
+.section-7 .left .down .card p {
   font-size: 1.2rem;
   font-weight: 200;
   color: rgba(255, 255, 255, 0.65);
@@ -1273,7 +1472,7 @@ button {
 
 @media only screen and (max-width: 992px) {
   .section-7 {
-    flex-direction: column;
+    flex-direction: column-reverse;
     gap: 30px;
   }
 
@@ -1283,6 +1482,9 @@ button {
 
   .section-7 .right {
     width: 100%;
+  }
+  .section-7 .right .slider {
+    border-radius: 0px;
   }
 }
 
@@ -1376,8 +1578,8 @@ button {
   border-top: 1px solid #ffffff;
   background-color: #1f7a8c;
   display: grid;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 40px;
+  padding-bottom: 40px;
   gap: 20px;
   grid-template-columns: 1.5fr 1fr 1fr 1fr;
 }
@@ -1415,6 +1617,11 @@ button {
   gap: 1.25rem;
 }
 
+.footer-2 .grid-item-1 .icons img {
+  height: 32px;
+  width: 32px;
+}
+
 .footer-2 .grid-item-x {
   display: flex;
   flex-direction: column;
@@ -1448,6 +1655,19 @@ button {
     grid-column: span 2;
     padding-right: 0rem;
   }
+}
+
+.copyright {
+  background: var(--color-primary);
+  color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.copyright p {
+  font-size: 1.5rem;
+  color: white;
+  font-weight: 300;
 }
 
 /* media queries */
